@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		.appbar {
+			background-color: pink;
+			color:black;
+			display: flex;
+			align-items: center;
+			height: 64px;
+			padding: 0 16px;
+		}
+		.logo {
+			font-size: 24px;
+			font-weight: bold;
+			margin-right: auto;
+		}
+		.search {
+        position: relative;
+        display: inline-block;
+        }
+       .search input[type="text"] {
+        padding-right: 20px;
+       }
+       .search-icon {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        font-size: 12px;
+       }
+       .search input[type="text"] {
+        background-image: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-512.png");
+        background-size: 16px 16px;
+        background-position: 5px 50%;
+        background-repeat: no-repeat;
+        padding-left: 26px;
+        width:80px ;
+        margin-right: 30px;
+       }
+
+		.admin-user {
+			display: flex;
+			align-items: center;
+			margin-right: 16px;
+		}
+		.person-icon {
+			font-size: 20px;
+			margin-right: 8px;
+		}
+		.sidebar {
+			background-color: #F1F1F1;
+			height: 100vh;
+			width: 240px;
+			position: fixed;
+			top: 64px;
+			left: 0;
+			padding: 16px;
+		}
+        /* CSS for content div */
+        .content {
+        margin-left: 300px; /* set the margin to the width of the sidebar */
+        }
+
+		.sidebar ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		.sidebar li {
+			margin-bottom: 8px;
+		}
+		.page-title1 {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 16px;
+            color: black;
+		}
+        .page-title2 {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 16px;
+		}
+        .page-title3 {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 16px;
+		}
+        .page-title4{
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 16px;
+		}
+        .page-title5 {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 16px;
+		}
+        .page-title6 {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 16px;
+		}
+		.footer {
+			background-color: pink;
+			color: black;
+			height: 48px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="appbar">
+		<img class="logo"  src="https://www.kra.go.ke/images/logo.png" width="150px" height="100px">
+		<div class="search">
+			<input type="text" placeholder="Search...">
+		
+		</div>
+		<div class="admin-user">
+			<i class="fa fa-user person-icon"></i>debt officer
+		</div>
+	</div>
+	<div class="sidebar">
+      
+		           <ul>
+			
+                    <li>
+                        <a href="all-task.html">
+                            <div class="page-title1">All Task</div> 
+                        </a> 
+                    </li>
+                    <li>
+                        <a href="document-validation.html">
+                            <div class="page-title2">Document Validation</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="task-remarks.html">
+                            <div class="page-title3">Task Remarks</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sla-tracking.html">
+                            <div class="page-title4">SLA tracking</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rejected-approve-work.html">
+                            <div class="page-title5">Reject/approve work</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="allocated-task.html">
+                            <div class="page-title6">Allocated task</div>
+                        </a>
+                    </li>
+                    </ul>
+    
+                    
+        
+    </div>
+    <div id="content" class="content"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Listen to click event on each link in the sidebar
+    $(".sidebar a").click(function(e) {
+        e.preventDefault(); // prevent the default link behavior
+        var href = $(this).attr("href"); // get the href attribute of the clicked link
+        // Load the content of the page using AJAX and display it in the right sidebar
+        $("#content").load(href);
+    });
+});
+</script>
+
+    <div class="footer">
+        KRA@2023Copyrights.
+    </div>
+    </body>
+    </html>
+    
+
